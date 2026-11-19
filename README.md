@@ -80,7 +80,7 @@ Requires **Python 3.9 or newer**.
 
 **Windows (Command Prompt / PowerShell)**
 ```bat
-git clone https://github.com/<your-username>/apkscope.git
+git clone https://github.com/thaqifaziim89/apkscope.git
 cd apkscope
 python -m venv venv
 venv\Scripts\activate
@@ -89,7 +89,7 @@ pip install -r requirements.txt
 
 **Linux / Kali / macOS**
 ```bash
-git clone https://github.com/<your-username>/apkscope.git
+git clone https://github.com/thaqifaziim89/apkscope.git
 cd apkscope
 python3 -m venv venv
 source venv/bin/activate
