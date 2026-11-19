@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  INTENTIONALLY VULNERABLE sample manifest for testing APKScope safely.
+  Fictional app (com.example.vulnnotes) - not a real application.
+  This is the tool's safe default target.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.vulnnotes"
+    android:versionCode="3"
+    android:versionName="1.2.0">
+
+    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <permission android:name="com.example.vulnnotes.permission.SYNC"
+        android:protectionLevel="normal" />
+
+    <application
+        android:label="VulnNotes"
+        android:debuggable="true"
+        android:allowBackup="true"
+        android:usesCleartextTraffic="true">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".AdminActivity" android:exported="true" />
+
+        <activity android:name=".DeepLinkActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <data android:scheme="vulnnotes" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".SyncService" android:exported="true"
+            android:permission="com.example.vulnnotes.permission.SYNC" />
+
+        <receiver android:name=".SmsReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <provider android:name=".NotesProvider"
+            android:authorities="com.example.vulnnotes.notes"
+            android:exported="true"
+            android:grantUriPermissions="true" />
+
+        <activity android:name=".SettingsActivity" android:exported="false" />
+    </application>
+</manifest>
