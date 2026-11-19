@@ -1,0 +1,36 @@
+# Scan output (may contain assessment results - never commit)
+output/
+reports/
+*.report.json
+
+# Target files (never commit third-party APKs)
+*.apk
+*.xapk
+*.apks
+
+# Secrets / environment
+.env
+.env.*
+*.key
+*.pem
+*.keystore
+*.jks
+secrets/
+
+# Python / virtual environments
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
