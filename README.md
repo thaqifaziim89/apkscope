@@ -277,7 +277,8 @@ apkscope/
 | Muhammad Khalif bin Baharuldin | Core analysis engine, permission checks, risk scoring |
 | Muhammad Talhah bin Zamri | Kill switch, dry-run mode, safe defaults |
 | Muhammad Fakhrul Izzat bin Azizul | README, report output formatting, documentation |
-| Member 5 (TBA) | Exported component and SDK checks, sample manifests, testing |
+| Elis Karisha Binti kamarul Hisam
+ | Exported component and SDK checks, sample manifests, testing |
 
 ## License
 Released under the [MIT License](LICENSE).
